@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+printf 'adxc-demo help\n'
+printf '  adxc\n'
+printf '  adxc <PROFILE> control|troubleshooting|checks|maintenance|custom\n'
+printf '  adxc-admin\n'
+printf '  adxc-cmd --list\n'

@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+# -----------------------------------------------------------------------------
+# adxc-demo Operations Console
+# -----------------------------------------------------------------------------
+
+set -euo pipefail
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ADXC_ROOT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
+# shellcheck source=../lib/adxc-common.sh
+source "${ADXC_ROOT_DIR}/lib/adxc-common.sh"
+# shellcheck source=../lib/adxc-dashboard-miqm.sh
+source "${ADXC_ROOT_DIR}/lib/adxc-dashboard-miqm.sh"
+
+adxc_show_main_dashboard() {
+    clear 2>/dev/null || true
+    adxc_print_header "adxc-demo OPERATIONS CONSOLE"
+    printf 'Version: %s\n\n' "${ADXC_VERSION}"
+    printf 'PROFILES\n\n'
+    local profile_dir index=1
+    for profile_dir in "${ADXC_PROFILES_DIR}"/*; do
+        [[ -d "${profile_dir}" ]] || continue
+        adxc_load_profile_config "${profile_dir}"
+        [[ "${PROFILE_ENABLED}" == "YES" ]] || continue
+        printf '[%d] %-22s %s\n' "${index}" "${PROFILE_CLASS}" "${PROFILE_NAME}"
+        index=$((index + 1))
+    done
+    printf '\nUsage:\n'
+    printf '  adxc <PROFILE>\n'
+    printf '  adxc <PROFILE> control\n'
+    printf '  adxc <PROFILE> troubleshooting\n'
+    printf '  adxc <PROFILE> checks\n'
+    printf '  adxc <PROFILE> maintenance\n'
+    printf '  adxc <PROFILE> custom\n'
+    printf '\nAdministration:\n'
+    printf '  adxc-admin\n'
+}
+
+adxc_dispatch_profile() {
+    local profile_name="$1"
+    local menu_name="${2:-dashboard}"
+    local profile_dir="${ADXC_PROFILES_DIR}/${profile_name}"
+
+    if [[ ! -d "${profile_dir}" ]]; then
+        adxc_print_error "Profile not found: ${profile_name}"
+        exit 1
+    fi
+
+    adxc_load_profile_config "${profile_dir}"
+
+    case "${PROFILE_TEMPLATE}:${menu_name}" in
+        mq_miqm:dashboard) adxc_miqm_profile_dashboard "${PROFILE_NAME}" ;;
+        mq_miqm:control) adxc_miqm_control_dashboard "${PROFILE_NAME}" ;;
+        mq_miqm:troubleshooting) adxc_miqm_troubleshooting_dashboard "${PROFILE_NAME}" ;;
+        mq_miqm:checks) adxc_miqm_checks_dashboard "${PROFILE_NAME}" ;;
+        mq_miqm:maintenance) adxc_miqm_maintenance_dashboard "${PROFILE_NAME}" ;;
+        mq_miqm:custom) adxc_miqm_custom_dashboard "${PROFILE_NAME}" ;;
+        *)
+            adxc_print_header "PROFILE : ${PROFILE_NAME}"
+            printf 'Template dashboard for %s is not implemented yet.\n' "${PROFILE_TEMPLATE}"
+            ;;
+    esac
+}
+
+if [[ "${#}" -eq 0 ]]; then
+    adxc_show_main_dashboard
+else
+    adxc_dispatch_profile "$@"
+fi

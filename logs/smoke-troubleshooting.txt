@@ -1,0 +1,22 @@
+============================================================
+MQ_MIQM_EXAMPLE - TROUBLESHOOTING
+============================================================
+Logs
+
+[1] Queue Manager Logs      Logs per queue manager
+[2] FDC Files               IBM MQ FDC collection
+
+Analysis
+
+[3] Error Scan              Search MQ logs for errors
+[4] MQ Diagnostics          Diagnostic command or script
+
+Configuration
+
+Logs                     Profile-bound operation                    UNCONFIGURED
+FDC                      Profile-bound operation                    UNCONFIGURED
+Error Scan               Profile-bound operation                    UNCONFIGURED
+MQ Diagnostics           Profile-bound operation                    UNCONFIGURED
+
+[b] Back
+[q] Exit

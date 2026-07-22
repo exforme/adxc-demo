@@ -1,0 +1,21 @@
+============================================================
+adxc-demo OPERATIONS CONSOLE
+============================================================
+Version: 1.0
+
+PROFILES
+
+[1] GENERIC_MW             GENERIC_MW_EXAMPLE
+[2] MIQM                   MQ_MIQM_EXAMPLE
+[3] STANDALONE             MQ_STANDALONE_EXAMPLE
+
+Usage:
+  adxc <PROFILE>
+  adxc <PROFILE> control
+  adxc <PROFILE> troubleshooting
+  adxc <PROFILE> checks
+  adxc <PROFILE> maintenance
+  adxc <PROFILE> custom
+
+Administration:
+  adxc-admin

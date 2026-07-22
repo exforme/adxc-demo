@@ -1,0 +1,4 @@
+COMMAND_NAME="demo-readiness-check"
+COMMAND_FILE="commands/demo-readiness-check.cmd"
+ATTACHED_BY="package"
+ATTACHED_DATE="2026-07-21 13:34:00"

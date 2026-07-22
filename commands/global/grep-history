@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+grep -i -- "${1:-}" "${HOME}/.bash_history" 2>/dev/null || true

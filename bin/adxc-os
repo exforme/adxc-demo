@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+printf 'OS Linux health checks and diagnostics\n'
+printf 'Hostname : %s\n' "$(hostname 2>/dev/null || printf unknown)"
+printf 'Kernel   : %s\n' "$(uname -r 2>/dev/null || printf unknown)"
+printf 'Uptime   : %s\n' "$(uptime 2>/dev/null || printf unknown)"

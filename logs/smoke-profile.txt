@@ -1,0 +1,18 @@
+============================================================
+PROFILE : MQ_MIQM_EXAMPLE
+============================================================
+ACTIVE | QM=MQ_MIQM_EXAMPLE | STANDBY=<auto-detect> | HEALTH=DEMO
+CH=<n/a> | DLQ=<n/a> | ERRORS=<n/a> | FAILOVER=<configured-by-profile>
+
+[1] Control             Operations affecting MQ availability
+[2] Troubleshooting     Diagnostics, logs and health checks
+[3] Checks              MQ object inspection and runtime data
+[4] Maintenance         Backup, export and housekeeping
+[5] Custom Commands     Profile-specific extensions
+
+Usage:
+  adxc MQ_MIQM_EXAMPLE control
+  adxc MQ_MIQM_EXAMPLE troubleshooting
+  adxc MQ_MIQM_EXAMPLE checks
+  adxc MQ_MIQM_EXAMPLE maintenance
+  adxc MQ_MIQM_EXAMPLE custom

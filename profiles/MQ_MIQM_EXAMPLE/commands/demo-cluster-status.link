@@ -1,0 +1,4 @@
+COMMAND_NAME="demo-cluster-status"
+COMMAND_FILE="commands/demo-cluster-status.cmd"
+ATTACHED_BY="package"
+ATTACHED_DATE="2026-07-21 13:34:00"

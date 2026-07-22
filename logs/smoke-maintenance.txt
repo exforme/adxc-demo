@@ -1,0 +1,13 @@
+============================================================
+MQ_MIQM_EXAMPLE - MAINTENANCE
+============================================================
+[1] Backup                 Backup, export and save operations
+[2] Log Cleanup            Housekeeping for logs
+
+Configuration
+
+Backup                   Profile-bound operation                    UNCONFIGURED
+Log Cleanup              Profile-bound operation                    UNCONFIGURED
+
+[b] Back
+[q] Exit

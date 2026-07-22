@@ -1,0 +1,21 @@
+============================================================
+MQ_MIQM_EXAMPLE - CHECKS
+============================================================
+[1] Queue Manager Status    Queue manager runtime state
+[2] Channels Running        Channel runtime validation
+[3] Listener Status         Listener availability
+[4] Queues With Messages    Non-SYSTEM queues with messages
+[5] Cluster Status          Active, standby and QM state
+[6] Cluster Readiness       Validate failover readiness
+
+Configuration
+
+QM Status                Profile-bound operation                    UNCONFIGURED
+Channels                 Profile-bound operation                    UNCONFIGURED
+Listeners                Profile-bound operation                    UNCONFIGURED
+Queues                   Profile-bound operation                    UNCONFIGURED
+Cluster Status           Profile-bound operation                    CONFIGURED
+Cluster Readiness        Profile-bound operation                    CONFIGURED
+
+[b] Back
+[q] Exit

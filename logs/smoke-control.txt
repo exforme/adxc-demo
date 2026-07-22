@@ -1,0 +1,22 @@
+============================================================
+MQ_MIQM_EXAMPLE - CONTROL
+============================================================
+STATUS
+
+ACTIVE | QM=MQ_MIQM_EXAMPLE | STANDBY=<auto-detect> | HEALTH=DEMO
+CH=<n/a> | DLQ=<n/a> | ERRORS=<n/a> | FAILOVER=<configured-by-profile>
+
+Node Control
+
+[1] Start Node          Start queue manager on this node
+[2] Stop Node           Gracefully stop active queue manager
+[3] Manual Failover     Trigger controlled MIQM failover
+
+Configuration
+
+Start Node               Profile-bound operation                    UNCONFIGURED
+Stop Node                Profile-bound operation                    UNCONFIGURED
+Manual Failover          Profile-bound operation                    UNCONFIGURED
+
+[b] Back
+[q] Exit

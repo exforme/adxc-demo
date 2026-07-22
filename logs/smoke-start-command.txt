@@ -1,0 +1,1 @@
+DEMO: start node command would run strmqm -x <QMGR>.
