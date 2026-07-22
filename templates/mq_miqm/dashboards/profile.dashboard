@@ -1,0 +1,5 @@
+[1] Control             Operations affecting MQ availability
+[2] Troubleshooting     Diagnostics, logs and health checks
+[3] Checks              MQ object inspection and runtime data
+[4] Maintenance         Backup, export and housekeeping
+[5] Custom Commands     Profile-specific extensions

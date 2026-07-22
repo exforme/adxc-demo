@@ -1,0 +1,7 @@
+STATUS
+  Simple dspmq -x style status line above Node Control.
+
+Node Control
+  [1] Start Node        Start queue manager on this node
+  [2] Stop Node         Gracefully stop active queue manager
+  [3] Manual Failover   Trigger controlled MIQM failover
